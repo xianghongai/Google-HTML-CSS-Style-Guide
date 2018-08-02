@@ -49,14 +49,14 @@
 
 不要使用制表符（Tab）或混合制表符和空格来缩进。
 
-```html
+```html good
 <ul>
-  <li>Fantastic
-  <li>Great
+  <li>Fantastic</li>
+  <li>Great</li>
 </ul>
 ```
 
-```css
+```css good
 .example {
   color: blue;
 }
@@ -626,7 +626,8 @@ text-indent: 2em;
 
     译者注：不要按字母顺序声明样式！
 
-    因为：如 `position` 相关的 `top/right/bottom/left/z-index` 定位声明，如 `width/height` 声明，中间会有其它属性间隔，不能便捷的、逻辑上的添加和修改。
+    因为：如 `position` 相关的 `top/right/bottom/left/z-index` 定位声明，如 `width/height` 声明，
+    中间会有其它属性间隔，不能便捷的、逻辑上的添加和修改。
 
     建议按以下顺序声明样式，便于维护：
 
@@ -641,7 +642,7 @@ text-indent: 2em;
 
 缩进所有代码块 ( `{}`之间的声明 ) 内容。
 
-缩进所有[代码块](https://www.w3.org/TR/CSS21/syndata.html#block)内容，即规则和声明中的规则，以反映层次结构并提高可读性。
+缩进所有[代码块](https://www.w3.org/TR/CSS21/syndata.html#block)内容，即规则和声明，以反映层次结构并提高可读性。
 
 ```css good
 @media screen, projection {

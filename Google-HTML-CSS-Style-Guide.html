@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Google-HTML-CSS-Style-Guide</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: #333;
+      background: none;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+    }
+
+    /* Code blocks */
+
+    pre[class*="language-"] {
+      padding: .8em;
+      overflow: auto;
+      /* border: 1px solid #ddd; */
+      border-radius: 3px;
+      /* background: #fff; */
+      background: #f5f5f5;
+    }
+
+    /* Inline code */
+
+    :not(pre)>code[class*="language-"] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5;
+    }
+
+    .token.comment,
+    .token.blockquote {
+      color: #969896;
+    }
+
+    .token.cdata {
+      color: #183691;
+    }
+
+    .token.doctype,
+    .token.punctuation,
+    .token.variable,
+    .token.macro.property {
+      color: #333;
+    }
+
+    .token.operator,
+    .token.important,
+    .token.keyword,
+    .token.rule,
+    .token.builtin {
+      color: #a71d5d;
+    }
+
+    .token.string,
+    .token.url,
+    .token.regex,
+    .token.attr-value {
+      color: #183691;
+    }
+
+    .token.property,
+    .token.number,
+    .token.boolean,
+    .token.entity,
+    .token.atrule,
+    .token.constant,
+    .token.symbol,
+    .token.command,
+    .token.code {
+      color: #0086b3;
+    }
+
+    .token.tag,
+    .token.selector,
+    .token.prolog {
+      color: #63a35c;
+    }
+
+    .token.function,
+    .token.namespace,
+    .token.pseudo-element,
+    .token.class,
+    .token.class-name,
+    .token.pseudo-class,
+    .token.id,
+    .token.url-reference .token.variable,
+    .token.attr-name {
+      color: #795da3;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: bold;
+      color: #1d3e81;
+    }
+
+    .token.list {
+      color: #ed6a43;
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+
+    .token.bold {
+      font-weight: bold;
+    }
+
+    .token.italic {
+      font-style: italic;
+    }
+
+
+    /* JSON */
+
+    .language-json .token.property {
+      color: #183691;
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333;
+    }
+
+    /* CSS */
+
+    code.language-css,
+    .language-css .token.function {
+      color: #0086b3;
+    }
+
+    /* YAML */
+
+    .language-yaml .token.atrule {
+      color: #63a35c;
+    }
+
+    code.language-yaml {
+      color: #183691;
+    }
+
+    /* Ruby */
+
+    .language-ruby .token.function {
+      color: #333;
+    }
+
+    /* Markdown */
+
+    .language-markdown .token.url {
+      color: #795da3;
+    }
+
+    /* Makefile */
+
+    .language-makefile .token.symbol {
+      color: #795da3;
+    }
+
+    .language-makefile .token.variable {
+      color: #183691;
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3;
+    }
+
+    /* Bash */
+
+    .language-bash .token.keyword {
+      color: #0086b3;
+    }
+
+    html body {
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ul,
+    html body>ol {
+      margin-bottom: 16px
+    }
+
+    html body ul,
+    html body ol {
+      padding-left: 2em
+    }
+
+    html body ul.no-list,
+    html body ol.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ul ul,
+    html body ul ol,
+    html body ol ol,
+    html body ol ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: bold;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em !important;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::before,
+    html body code::after {
+      letter-spacing: -0.2em;
+      content: "\00a0"
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: .85em !important;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      font-size: .85em !important;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:before,
+    html body pre tt:before,
+    html body pre code:after,
+    html body pre tt:after {
+      content: normal
+    }
+
+    html body p,
+    html body blockquote,
+    html body ul,
+    html body ol,
+    html body dl,
+    html body pre {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+      html body blockquote {
+        color: #5c5c5c
+      }
+      html body pre {
+        page-break-inside: avoid
+      }
+      html body table {
+        display: table
+      }
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+      html body pre,
+      html body code {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview .pagebreak,
+    .markdown-preview .newpage {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([for="preview"]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, 0.66);
+      border: 4px solid rgba(150, 150, 150, 0.66);
+      background-clip: content-box
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, 0.66);
+      border: 4px solid rgba(150, 150, 150, 0.66);
+      background-clip: content-box
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul {
+      padding: 0 1.6em;
+      margin-top: .8em
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li {
+      margin-bottom: .8em
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul {
+      list-style-type: none
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 150px);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    /* Please visit the URL below for more information: */
+
+    /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    .md-sidebar-toc {
+      width: 360px !important;
+    }
+
+    .md-sidebar-toc li {
+      white-space: nowrap;
+    }
+
+    pre[data-info="html bad"],
+    pre[data-info="css bad"],
+    pre[data-info="javascript bad"] {
+      border: 1px solid rgba(128, 128, 128, 0.3);
+      background-color: rgba(235, 173, 173, 0.28);
+    }
+
+    pre[data-info="html good"],
+    pre[data-info="css good"],
+    pre[data-info="javascript good"] {
+      border: 1px solid rgba(128, 128, 128, 0.3);
+      background-color: rgba(173, 235, 173, 0.18);
+    }
+
+    .language-text {
+      color: #666 !important;
+    }
+  </style>
+</head>
+
+<body for="html-export">
+  <div class="mume markdown-preview   ">
+    <h1 class="mume-header" id="google-htmlcss%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97">Google HTML/CSS代码风格指南</h1>
+
+    <h2 class="mume-header" id="1%E8%83%8C%E6%99%AF">1.背景</h2>
+
+    <p>本文档定义了HTML/CSS的编写格式和风格规则。它旨在提高合作和代码质量,并使其支持基础架构。它适用于HTML/CSS文件。只要代码质量是可以被维护的，就能很好的被工具混淆、压缩和合并。</p>
+    <h2 class="mume-header" id="2-%E6%80%BB%E5%88%99">2. 总则</h2>
+
+    <h3 class="mume-header" id="21-%E6%A0%B7%E5%BC%8F%E8%A7%84%E5%88%99">2.1 样式规则</h3>
+
+    <h4 class="mume-header" id="211-%E5%8D%8F%E8%AE%AE-protocol">2.1.1 协议 / Protocol</h4>
+
+    <p>尽可能将 HTTPS 协议用于嵌入式资源。</p>
+    <p>始终对图像（images）和其他媒体文件，样式文件（style sheets）和脚本文件（scripts）使用 HTTPS 协议
+      <code>https:</code>，除非相应的文件不能通过　HTTPS　获得。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended: omits the protocol (省略了协议) --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Not recommended: uses the HTTP protocol --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended: omits the protocol */</span>
+<span class="token atrule"><span class="token rule">@import</span> <span class="token string">'//fonts.googleapis.com/css?family=Open+Sans'</span><span class="token punctuation">;</span></span>
+
+<span class="token comment">/* Not recommended: uses the HTTP protocol */</span>
+<span class="token atrule"><span class="token rule">@import</span> <span class="token string">'http://fonts.googleapis.com/css?family=Open+Sans'</span><span class="token punctuation">;</span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token atrule"><span class="token rule">@import</span> <span class="token string">'https://fonts.googleapis.com/css?family=Open+Sans'</span><span class="token punctuation">;</span></span>
+</pre>
+    <h3 class="mume-header" id="22-%E6%8E%92%E7%89%88%E8%A7%84%E5%88%99">2.2 排版规则</h3>
+
+    <h4 class="mume-header" id="221-%E7%BC%A9%E8%BF%9B-indentation">2.2.1 缩进 / Indentation</h4>
+
+    <p>一次缩进2个空格。</p>
+    <p>不要使用制表符（Tab）或混合制表符和空格来缩进。</p>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Fantastic
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Great
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token selector"><span class="token class">.example</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="222-%E5%A4%A7%E5%B0%8F%E5%86%99-capitalization">2.2.2 大小写 / Capitalization</h4>
+
+    <p>仅使用小写。</p>
+    <p>所有代码必须为小写：这适用于 HTML 元素名称、属性和属性值（除了 text/CDATA），CSS的选择器、属性和属性值（字符串除外）。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>A</span> <span class="token attr-name">HREF</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>A</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html google" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>google.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Google<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#E5E5E5</span><span class="token punctuation">;</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#e5e5e5</span><span class="token punctuation">;</span>
+</pre>
+    <h4 class="mume-header" id="223-%E8%A1%8C%E5%B0%BE%E7%A9%BA%E6%A0%BC">2.2.3 行尾空格</h4>
+
+    <p>删除行尾白空格。</p>
+    <p>行尾空格没必要存在。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>What? <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Yes please.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</pre>
+    <h3 class="mume-header" id="23-%E6%96%87%E4%BB%B6-meta-%E8%A7%84%E5%88%99">2.3 文件 Meta 规则</h3>
+
+    <h4 class="mume-header" id="231-%E7%BC%96%E7%A0%81-encoding">2.3.1 编码 / Encoding</h4>
+
+    <p>使用 UTF-8 编码 (不带 BOM 头)</p>
+    <p>让你的编辑器用没有字节顺序标记的 UTF-8 编码格式进行编写。</p>
+    <p>在HTML模板和文件中指定编码
+      <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code> . 不需要制定样式表的编码，它默认为 UTF-8.</p>
+    <h4 class="mume-header" id="232-%E6%B3%A8%E9%87%8A-comments">2.3.2 注释 / Comments</h4>
+
+    <p>根据需要尽可能的去解释你写的代码。</p>
+    <p>用注释来解释代码：它涵盖了什么、它的目的是什么、为什么使用或优先使用这个解决方案？</p>
+    <p>（本规则可选，要求对代码进行完整的注释并不现实，注释也会增重 HTML 和 CSS 的代码体积。注释取决于项目的复杂程度。）</p>
+    <h4 class="mume-header" id="233-%E4%BA%8B%E9%A1%B9">2.3.3 事项</h4>
+
+    <p>用
+      <code>TODO</code> 标记待办事项和处于活动状态事项。</p>
+    <p>
+      <code>TODO</code> 仅使用关键字突出显示待办事项，而不是其他常见格式
+      <code>@@</code>。</p>
+    <p>在括号中附加联系人（用户名或邮件列表），格式为
+      <code>TODO(contact)</code>。</p>
+    <p>在冒号后附加操作项，如
+      <code>TODO: action item</code>。</p>
+    <pre data-role="codeBlock" data-info="html" class="language-html"><span class="token comment">&lt;!-- TODO: remove optional tags --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Apples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Oranges<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+</pre>
+    <pre class="language-text">译者注：代码常用注释标记：
+
+- `NOTE`: 代码如何工作的描述（比较复杂需要解释）
+- `XXX`: 警告可能存在的陷阱 `NOTE:XXX:陷阱`
+- `HACK`: 用于规避问题、错误，代码不健壮或存在异常。 `HACK:FIXME:临时填坑`
+- `FIXME`: 虽然实现功能，但应该有更优的代码方案，需要重构
+- `BUG`: 这里有问题
+- `TODO`: 没问题，但需要编写额外的代码 (当前工作被中断，未来得及完成)
+
+需要配置编辑器以高亮显示这些注释标记
+</pre>
+    <h2 class="mume-header" id="3-html">3. HTML</h2>
+
+    <h3 class="mume-header" id="31-html-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E8%A7%84%E5%88%99">3.1 HTML 代码风格规则</h3>
+
+    <h4 class="mume-header" id="311-document-%E7%B1%BB%E5%9E%8B">3.1.1 Document 类型</h4>
+
+    <p>使用HTML5。</p>
+    <p>HTML5（HTML 语法）是所有 HTML 文档的首选：
+      <code>&lt;!DOCTYPE html&gt;</code>。</p>
+    <p>（推荐使用 HTML，即
+      <code>text/html</code>。不要使用 XHTML。XHTML
+      <code>application/xhtml+xml</code> 文档标记缺少浏览器和基础架构 / infrastructure 支持，并且存储空间优化比 HTML 少。）</p>
+    <h4 class="mume-header" id="312-html-%E4%BB%A3%E7%A0%81%E6%9C%89%E6%95%88%E6%80%A7-validity">3.1.2 HTML 代码有效性 / Validity</h4>
+
+    <p>尽可能使用有效的 HTML。</p>
+    <p>编写有效的HTML代码，否则很难提升性能。</p>
+    <p>使用
+      <a href="https://validator.w3.org/nu/">W3C HTML validator</a> 等工具进行测试。</p>
+    <p>HTML 代码有效性是代码质量衡量的重要标准，并且有助于学习技术规范，以确保正确使用 HTML 代码。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>This is only a test.
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>This is only a test.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+</pre>
+    <h4 class="mume-header" id="313-%E8%AF%AD%E4%B9%89-semantics">3.1.3 语义 / Semantics</h4>
+
+    <p>根据 HTML 用途合理使用之。</p>
+    <p>使用 HTML 元素（称之为“标记 / tags”是不正确的）来创建和描述文档。例如，使用 heading 元素作为标题，p 元素用于段落，a 元素用于锚点等。</p>
+    <p>合理使用 HTML 对可访问性、代码重用和编码效率各方面有重要的影响。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>goToRecommendations();<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>All recommendations<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>recommendations/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>All recommendations<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</pre>
+    <h4 class="mume-header" id="314-%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%87%E9%80%89%E6%96%B9%E6%A1%88">3.1.4 多媒体备选方案</h4>
+
+    <p>为多媒体提供备选内容。</p>
+    <p>对于多媒体，如图像，视频，通过
+      <code>canvas</code> 读取的动画元素，请确保提供替代访问方案。 对于图像提供有意义的替代文本
+      <code>alt</code> ，对于视频和音频提供有效的副本和字幕说明。</p>
+    <p>提供备选内容是很重要的，原因：给盲人用户以一些提示性的文字，用
+      <code>@alt</code> 告诉他这图像是关于什么的，给可能没理解视频或音频内容的用户以文字提示。</p>
+    <p>（图像的 alt 属性会产生冗余，纯粹装饰性的图像，不需使用替代文本，直接用
+      <code>alt=&quot;&quot;</code> 属性加以说明 。）</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spreadsheet.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spreadsheet.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Spreadsheet screenshot.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+    <h4 class="mume-header" id="315-%E5%88%86%E7%A6%BB">3.1.5 分离</h4>
+
+    <p>将结构、表象和行为分离。</p>
+    <p>严格保持结构 / structure （标记 / markup），表象 / presentation （样式 / styling），和行为 / behavior （脚本 / scripting）的分离, 并尽量让三者之间的交互保持最低限。</p>
+    <p>确保文档和模板只包含用于结构化文档目的的 HTML，把所有表象的都纳入样式表中，把所有行为的都放进脚本中。</p>
+    <p>此外，使联系区域尽可能小，文档和模板中尽可能地减少样式表和脚本的链接。（一是减少链接数，二是减少代码作用范围）</p>
+    <p>基于可维护性，将结构从表象和行为分离非常重要。更改 HTML 文档和模板比更新样式表和脚本成本要高。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>HTML sucks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>base.css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>screen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>grid.css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>screen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>print.css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>print<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>HTML sucks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>I’ve read about this on a few sites but now I’m sure:
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>u</span><span class="token punctuation">></span></span>HTML is stupid!!1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>u</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>center</span><span class="token punctuation">></span></span>I can’t believe there’s no way to control the styling of
+  my website without doing everything all over again!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>center</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>My first CSS-only redesign<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>My first CSS-only redesign<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>I’ve read about this on a few sites but today I’m actually
+  doing it: separating concerns and avoiding anything in the HTML of
+  my website that is presentational.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>It’s awesome!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</pre>
+    <h4 class="mume-header" id="316-%E5%AE%9E%E4%BD%93%E5%BC%95%E7%94%A8">3.1.6 实体引用</h4>
+
+    <p>不要使用实体引用。</p>
+    <p>不需要使用类似
+      <code>&amp;mdash;</code>、
+      <code>&amp;rdquo;</code> 和
+      <code>&amp;#x263a;</code> 等的实体引用, 假定团队之间所用的文件和编辑器是同一编码（UTF-8）。</p>
+    <p>唯一的例外适用于HTML中具有特殊含义的字符（如
+      <code>&lt;</code> 和
+      <code>&amp;</code>）以及控件或“invisible / 不可见”字符（如不间断空格）。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+The currency symbol for the Euro is <span class="token entity" title="&#x201C;">&amp;ldquo;</span><span class="token entity" title="&amp;eur;">&amp;eur;</span><span class="token entity" title="&#x201D;">&amp;rdquo;</span>.
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+The currency symbol for the Euro is “€”.
+</pre>
+    <h4 class="mume-header" id="317-%E5%8F%AF%E9%80%89%E6%A0%87%E7%AD%BE">3.1.7 可选标签</h4>
+
+    <p>省略可选标签（可选）。</p>
+    <p>出于优化文件大小和校验， 可以考虑省略可选标签，哪些是可选标签可以参考
+      <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission">HTML5 specification</a>。</p>
+    <p>（这种方法需要更精准的规范来制定，众多的开发者对此的观点也都不同。考虑到一致性和简洁的原因，省略所有可选标记是有必要的。）</p>
+    <h4 class="mume-header" id="318-type-%E5%B1%9E%E6%80%A7">3.1.8 type 属性</h4>
+
+    <p>在样式表和脚本的标签中忽略 type 属性</p>
+    <p>在样式表（除非不用 CSS）和脚本（除非不用 JavaScript）的标签中 不写 type 属性。</p>
+    <p>HTML5默认 type 为
+      <code>text/css</code> 和
+      <code>text/javascript</code> 类型，所以没必要指定。即便是老浏览器也是支持的。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.google.com/css/maia.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.google.com/css/maia.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.google.com/js/gweb/analytics/autotrack.js<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.google.com/js/gweb/analytics/autotrack.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</pre>
+    <h3 class="mume-header" id="32-html-%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E8%A7%84%E5%88%99">3.2 HTML 代码格式规则</h3>
+
+    <h4 class="mume-header" id="321-%E4%B8%80%E8%88%AC%E6%A0%BC%E5%BC%8F">3.2.1 一般格式</h4>
+
+    <p>为每个块 / block，列表 / list 或表 / table 元素使用一个新行，子元素相对于父元素进行缩进。</p>
+    <p>将元素撇开样式（CSS 允许元素用 display 属性赋予不同的性质），将每个块，列表或表元素放在新行上。</p>
+    <p>另外，块元素、列表元素或表格元素的子元素需要缩进。</p>
+    <p>（如果遇到列表项之间的空白问题，可以将所有 li 元素放在一行中。让 linter 抛出警告而不是错误。）</p>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>Space<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span>, the final frontier.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Moe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Larry<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Curly<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span> <span class="token attr-name">scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Income<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span> <span class="token attr-name">scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Taxes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>$ 5.00<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>$ 4.50<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+</pre>
+    <h4 class="mume-header" id="322-html-%E8%A1%8C%E5%8C%85%E8%A3%B9">3.2.2 HTML 行包裹</h4>
+
+    <p>长行换行（可选）。</p>
+    <p>虽然没有针对 HTML 代码列长度的限制和建议，但如果能明显提高可读性，则可以考虑长行换行。</p>
+    <p>换行时，新延续的行在原始行缩进基础上再缩进4个空格。</p>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-progress-circular</span> <span class="token attr-name">md-mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>indeterminate<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md-accent<span class="token punctuation">"</span></span>
+    <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ctrl.loading<span class="token punctuation">"</span></span> <span class="token attr-name">md-diameter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>35<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-progress-circular</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-progress-circular</span>
+    <span class="token attr-name">md-mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>indeterminate<span class="token punctuation">"</span></span>
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md-accent<span class="token punctuation">"</span></span>
+    <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ctrl.loading<span class="token punctuation">"</span></span>
+    <span class="token attr-name">md-diameter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>35<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-progress-circular</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-progress-circular</span> <span class="token attr-name">md-mode</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>indeterminate<span class="token punctuation">"</span></span>
+                      <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md-accent<span class="token punctuation">"</span></span>
+                      <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ctrl.loading<span class="token punctuation">"</span></span>
+                      <span class="token attr-name">md-diameter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>35<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-progress-circular</span><span class="token punctuation">></span></span>
+</pre>
+    <h4 class="mume-header" id="323-html-%E5%BC%95%E5%8F%B7">3.2.3 HTML 引号</h4>
+
+    <p>属性值，使用双引号。</p>
+    <p>属性值包裹使用双引号（&quot;&quot;）而不是单引号（''）。</p>
+    <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>maia-button maia-button-secondary<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Sign in<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</pre>
+    <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token comment">&lt;!-- Recommended --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>maia-button maia-button-secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Sign in<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</pre>
+    <h2 class="mume-header" id="4-css">4. CSS</h2>
+
+    <h3 class="mume-header" id="41-css-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E8%A7%84%E5%88%99">4.1 CSS 代码风格规则</h3>
+
+    <h4 class="mume-header" id="411-css-%E6%9C%89%E6%95%88%E6%80%A7-validity">4.1.1 CSS 有效性 / Validity</h4>
+
+    <p>尽可能使用有效的CSS。</p>
+    <p>使用有效的CSS代码，除非处理 CSS 验证程序错误或需要专有语法。</p>
+    <p>使用
+      <a href="https://jigsaw.w3.org/css-validator/">W3C CSS validator</a> 这类工具进行测试。</p>
+    <p>CSS 代码有效性是代码质量衡量的重要标准，如果发现 CSS 代码没有任何效果可以删除它，并确保正确的使用 CSS。</p>
+    <h4 class="mume-header" id="412-idclass-%E5%91%BD%E5%90%8D">4.1.2 ID/Class 命名</h4>
+
+    <p>使用有意义且通用的 ID/Class 名。</p>
+    <p>命名不可表象、生僻和模糊，通过 ID/Class 命名能知道元素有什么用途，或者是其它通用命名方式。</p>
+    <p>首选具有特定名称并反映元素用途的命名，这些名称最容易理解且不易改变，以减少更新。</p>
+    <p>通用命名方式是对元素进行简单的补充，各相邻元素是没有特殊意义的、歧义的，如同命名为&quot;helpers&quot;。</p>
+    <p>使用功能性或通用命名方式，会减少不必要的文档或模板修改。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended: meaningless */</span>
+<span class="token selector"><span class="token id">#yee-1901</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* Not recommended: presentational */</span>
+<span class="token selector"><span class="token class">.button-green</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.clear</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended: specific */</span>
+<span class="token selector"><span class="token id">#gallery</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token id">#login</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.video</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* Recommended: generic */</span>
+<span class="token selector"><span class="token class">.aux</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.alt</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <pre class="language-text">译者注: 项目样式声明中不能用 ID 定义规则！
+</pre>
+    <h4 class="mume-header" id="413-idclass-%E5%91%BD%E5%90%8D%E9%A3%8E%E6%A0%BC">4.1.3 ID/Class 命名风格</h4>
+
+    <p>ID/Class 命名，如无必要短小精确，如有需要详尽清晰。</p>
+    <p>ID/Class 名尽可能包含语义语境。</p>
+    <p>采用这样的命名方式，代码易读、易懂且高效。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token selector"><span class="token id">#navigation</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.atr</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector"><span class="token id">#nav</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.author</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="414-%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9%E5%99%A8-type-selectors">4.1.4 类型选择器 Type Selectors</h4>
+
+    <p>避免使用类型选择器限定 ID/Class 名。</p>
+    <p>如无必要，元素名和 ID/Class 不进行组合使用。</p>
+    <p>出于
+      <a href="http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/">性能原因</a>，避免使用不必要的父辈节点选择器，以减少层级和嵌套。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token selector">ul<span class="token id">#example</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector">div<span class="token class">.error</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector"><span class="token id">#example</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.error</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="415-%E9%80%9F%E8%AE%B0%E5%B1%9E%E6%80%A7">4.1.5 速记属性</h4>
+
+    <p>尽可能使用速记属性。</p>
+    <p>CSS 提供了各种速记属性（如 font ），应尽可能使用，即使在只显式设置一个值的情况下也是如此。</p>
+    <p>使用缩写可以提高编码效率和可理解性。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token property">border-top-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token property">font-family</span><span class="token punctuation">:</span> palatino, georgia, serif<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">1.6</span><span class="token punctuation">;</span>
+<span class="token property">padding-bottom</span><span class="token punctuation">:</span> <span class="token number">2</span>em<span class="token punctuation">;</span>
+<span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+<span class="token property">padding-right</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+<span class="token property">padding-top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token property">border-top</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token property">font</span><span class="token punctuation">:</span> <span class="token number">100%</span>/<span class="token number">1.6</span> palatino, georgia, serif<span class="token punctuation">;</span>
+<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span>em <span class="token number">2</span>em<span class="token punctuation">;</span>
+</pre>
+    <h4 class="mume-header" id="416-0-%E5%92%8C-%E5%8D%95%E4%BD%8Dunits">4.1.6 0 和 单位/Units</h4>
+
+    <p>除非需要，否则省略“0”值后的单位。</p>
+    <p>非必要的情况下
+      <code>0</code> 后面不加单位。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token comment">/* This flex-basis component requires a unit. */</span>
+<span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token comment">/* Not ambiguous without the unit, but needed in IE11. */</span>
+<span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</pre>
+    <h4 class="mume-header" id="417-%E5%89%8D%E5%AF%BC%E6%95%B0%E5%AD%97-0">4.1.7 前导数字 0</h4>
+
+    <p>0开头的浮点数值省略前导 0 。</p>
+    <p>值或长度在 -1 与 1 之间的小数，小数前的 0 可以忽略不写。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">.8</span>em<span class="token punctuation">;</span>
+</pre>
+    <h4 class="mume-header" id="418-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B3%95">4.1.8 十六进制表示法</h4>
+
+    <p>可能使用3个字符的十六进制表示法。</p>
+    <p>对于许可的颜色值，3个字符的十六进制表示法更短更简洁。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#eebbcc</span><span class="token punctuation">;</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#ebc</span><span class="token punctuation">;</span>
+</pre>
+    <h4 class="mume-header" id="419-%E5%89%8D%E7%BC%80">4.1.9 前缀</h4>
+
+    <p>选择器前面加上特殊应用标识的前缀（可选）。</p>
+    <p>在大型项目，以及嵌入其他项目代码、外部站点代码，在 ID/Class 名字前加上标识性前缀（命名空间），使用简短的唯一标识符，后面使用短破折号
+      <code>-</code> 链接。</p>
+    <p>使用命名空间有助于防止命名冲突，便于维护，例如在搜索和替换操作中。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token selector"><span class="token class">.adw-help</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">/* AdWords */</span>
+<span class="token selector"><span class="token id">#maia-note</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">/* Maia */</span>
+</pre>
+    <h4 class="mume-header" id="4110-idclass-%E5%90%8D%E5%88%86%E9%9A%94%E7%AC%A6">4.1.10 ID/Class 名分隔符</h4>
+
+    <p>用连字符
+      <code>-</code> 分隔 ID/Class 名中的单词。</p>
+    <p>除了连字符之外，不要通过任何字符（或无任何符号）连接选择器中的单词和简称，以便提高可读性和可扫描性。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended: does not separate the words “demo” and “image” */</span>
+<span class="token selector"><span class="token class">.demoimage</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* Not recommended: uses underscore instead of hyphen */</span>
+<span class="token selector"><span class="token class">.error_status</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector"><span class="token id">#video-id</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.ads-sample</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="4111-hacks">4.1.11 Hacks</h4>
+
+    <p>避免用户代理 (user agent) 检测以及 CSS &quot;hacks&quot; —— 优先尝试使用其他的解决方案。</p>
+    <p>通过用户代理检测、特殊的 CSS filters、变通灵活的方法、hacks等技术手段解决样式差异问题虽然很诱人，但是为了可实现、可维护、高效率、易管理的代码管理，这些都应该是在万不得已、最后才采用的技术方案。项目倾向于采取阻力最小的方式，频繁使用代理检测和
+      hacks ，如此以往，会损害整个项目。</p>
+    <h3 class="mume-header" id="42-css-%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F">4.2 CSS 代码格式</h3>
+
+    <h4 class="mume-header" id="421-%E5%A3%B0%E6%98%8E%E9%A1%BA%E5%BA%8F">4.2.1 声明顺序</h4>
+
+    <p>按字母顺序声明样式。</p>
+    <p>按字母顺序声明样式，易于记忆和维护。</p>
+    <p>用于浏览器兼容性前缀的声明在排序中应忽略。但是，CSS 属性中用于多个浏览器的兼容性前缀声明，应该进行排序（例如 -moz 前缀在 -webkit 之前）。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> fuchsia<span class="token punctuation">;</span>
+<span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid<span class="token punctuation">;</span>
+<span class="token property">-moz-border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+<span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+<span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+<span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token property">text-indent</span><span class="token punctuation">:</span> <span class="token number">2</span>em<span class="token punctuation">;</span>
+</pre>
+    <pre class="language-text">译者注：不要按字母顺序声明样式！
+
+因为：如 `position` 相关的 `top&#x2F;right&#x2F;bottom&#x2F;left&#x2F;z-index` 定位声明，如 `width&#x2F;height` 声明，
+中间会有其它属性间隔，不能便捷的、逻辑上的添加和修改。
+
+建议按以下顺序声明样式，便于维护：
+
+- 影响文档流的属性(display&#x2F;visibility&#x2F;float&#x2F;clear&#x2F;position)
+- 盒模型的属性(width&#x2F;height&#x2F;margin&#x2F;padding&#x2F;border&#x2F;outline)
+- 排版属性(font&#x2F;line-height&#x2F;text-align&#x2F;text-indent&#x2F;text-decoration&#x2F;white-space&#x2F;color)
+- 背景装饰属性(background&#x2F;opacity&#x2F;cursor&#x2F;list-style)
+- 生成内容属性(content&#x2F;quotes)
+- 其它CSS3属性，兼容性前缀打包自动添加 (border-radius&#x2F;box-shadow&#x2F;transition&#x2F;transform&#x2F;animation)
+</pre>
+    <h4 class="mume-header" id="422-%E4%BB%A3%E7%A0%81%E5%9D%97%E5%86%85%E5%AE%B9%E7%BC%A9%E8%BF%9B">4.2.2 代码块内容缩进</h4>
+
+    <p>缩进所有代码块 (
+      <code>{}</code>之间的声明 ) 内容。</p>
+    <p>缩进所有
+      <a href="https://www.w3.org/TR/CSS21/syndata.html#block">代码块</a>内容，即规则和声明，以反映层次结构并提高可读性。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen, projection</span> <span class="token punctuation">{</span>
+
+  <span class="token selector">html </span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#444</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="423-%E5%A3%B0%E6%98%8E%E7%BB%93%E6%9D%9F">4.2.3 声明结束</h4>
+
+    <p>每个声明都要用分号
+      <code>;</code> 结尾。</p>
+    <p>出于一致性和可扩展性的原因，以分号结束每个声明。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token selector"><span class="token class">.test</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px
+<span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector"><span class="token class">.test</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="424-%E5%B1%9E%E6%80%A7%E5%90%8D%E7%BB%93%E6%9D%9F">4.2.4 属性名结束</h4>
+
+    <p>在属性名称冒号后面加一个空格。</p>
+    <p>出于一致性原因，声明中的属性和值之间添加一个空格（属性和冒号之间不要空格）。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token selector">h3 </span><span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span>bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector">h3 </span><span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="425-%E5%A3%B0%E6%98%8E%E9%97%B4%E9%9A%94">4.2.5 声明间隔</h4>
+
+    <p>选择器和声明块之间加一个空格。</p>
+    <p>在最后一个选择器和
+      <a href="https://www.w3.org/TR/CSS21/syndata.html#rule-sets">声明块</a>开始的左大括号
+      <code>{</code> 之间添加一个空格。</p>
+    <p>左大括号与规则中的最后一个选择器处于一行。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended: missing space */</span>
+<span class="token selector"><span class="token id">#video</span></span><span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Not recommended: unnecessary line break */</span>
+<span class="token selector"><span class="token id">#video</span>
+</span><span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector"><span class="token id">#video</span> </span><span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="426-%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E5%A3%B0%E6%98%8E%E9%97%B4%E9%9A%94">4.2.6 选择器和声明间隔</h4>
+
+    <p>将选择器和声明隔行分开。</p>
+    <p>每个选择器之间，每个声明之间都隔行分开。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token selector">a<span class="token pseudo-class">:focus</span>, a<span class="token pseudo-class">:active</span> </span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">1</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token selector">h1,
+h2,
+h3 </span><span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">1.2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="427-%E8%A7%84%E5%88%99%E9%97%B4%E9%9A%94">4.2.7 规则间隔</h4>
+
+    <p>从新的一行开始每个规则。</p>
+    <p>规则之间隔一个空白行。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token selector">html </span><span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">body </span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h4 class="mume-header" id="428-css-%E5%BC%95%E5%8F%B7">4.2.8 CSS 引号</h4>
+
+    <p>对属性选择器和属性值使用单引号
+      <code>''</code> 而不是双引号
+      <code>&quot;&quot;</code>。</p>
+    <p>不要在URI值
+      <code>url()</code> 中使用引号。</p>
+    <p>例外：
+      <code>@charset</code> 规则中使用双引号 -
+      <a href="https://www.w3.org/TR/CSS21/syndata.html#charset">single quotation marks are not permitted.</a>。</p>
+    <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
+<span class="token atrule"><span class="token rule">@import</span> <span class="token url">url("https://www.google.com/css/maia.css")</span><span class="token punctuation">;</span></span>
+
+<span class="token selector">html </span><span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"open sans"</span>, arial, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Recommended */</span>
+<span class="token atrule"><span class="token rule">@import</span> <span class="token url">url(https://www.google.com/css/maia.css)</span><span class="token punctuation">;</span></span>
+
+<span class="token selector">html </span><span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'open sans'</span>, arial, sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <h3 class="mume-header" id="43-css-meta-%E8%A7%84%E5%88%99">4.3 CSS Meta 规则</h3>
+
+    <h4 class="mume-header" id="431-%E6%B3%A8%E9%87%8A">4.3.1 注释</h4>
+
+    <p>分组注释 (可选)。</p>
+    <p>如果可以，按功能、层级等方式对样式分组后统一写注释。独立成行。</p>
+    <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token comment">/* Header */</span>
+
+<span class="token selector"><span class="token id">#adw-header</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* Footer */</span>
+
+<span class="token selector"><span class="token id">#adw-footer</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* Gallery */</span>
+
+<span class="token selector"><span class="token class">.adw-gallery</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</pre>
+    <h2 class="mume-header" id="%E6%9C%80%E5%90%8E">最后</h2>
+
+    <p>追求一致性。</p>
+    <p>如果要编辑代码，先查看已有代码的风格，与之保持一致。</p>
+    <p>约束一致性的编码环境需要一份公共的编码风格指南，参与者可以清晰明了要做成什么样，而不是考虑你 balabala 什么。这里仅介绍了统一风格的规则，以便开发者去了解和借鉴。保持自己的编码风格固然重要，但是你把自己代码添加到文件中，与现有的代码风格完全不同，这样会降低代码的可读性和可理解性，避免这样做。</p>
+    <p>山茶树和葡萄树 于 2018-08-02 译。</p>
+
+  </div>
+  <div class="md-sidebar-toc">
+    <ul>
+      <li>
+        <a href="#google-htmlcss%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97">Google HTML/CSS代码风格指南</a>
+        <ul>
+          <li>
+            <a href="#1%E8%83%8C%E6%99%AF">1.背景</a>
+          </li>
+          <li>
+            <a href="#2-%E6%80%BB%E5%88%99">2. 总则</a>
+            <ul>
+              <li>
+                <a href="#21-%E6%A0%B7%E5%BC%8F%E8%A7%84%E5%88%99">2.1 样式规则</a>
+                <ul>
+                  <li>
+                    <a href="#211-%E5%8D%8F%E8%AE%AE-protocol">2.1.1 协议 / Protocol</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#22-%E6%8E%92%E7%89%88%E8%A7%84%E5%88%99">2.2 排版规则</a>
+                <ul>
+                  <li>
+                    <a href="#221-%E7%BC%A9%E8%BF%9B-indentation">2.2.1 缩进 / Indentation</a>
+                  </li>
+                  <li>
+                    <a href="#222-%E5%A4%A7%E5%B0%8F%E5%86%99-capitalization">2.2.2 大小写 / Capitalization</a>
+                  </li>
+                  <li>
+                    <a href="#223-%E8%A1%8C%E5%B0%BE%E7%A9%BA%E6%A0%BC">2.2.3 行尾空格</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#23-%E6%96%87%E4%BB%B6-meta-%E8%A7%84%E5%88%99">2.3 文件 Meta 规则</a>
+                <ul>
+                  <li>
+                    <a href="#231-%E7%BC%96%E7%A0%81-encoding">2.3.1 编码 / Encoding</a>
+                  </li>
+                  <li>
+                    <a href="#232-%E6%B3%A8%E9%87%8A-comments">2.3.2 注释 / Comments</a>
+                  </li>
+                  <li>
+                    <a href="#233-%E4%BA%8B%E9%A1%B9">2.3.3 事项</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#3-html">3. HTML</a>
+            <ul>
+              <li>
+                <a href="#31-html-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E8%A7%84%E5%88%99">3.1 HTML 代码风格规则</a>
+                <ul>
+                  <li>
+                    <a href="#311-document-%E7%B1%BB%E5%9E%8B">3.1.1 Document 类型</a>
+                  </li>
+                  <li>
+                    <a href="#312-html-%E4%BB%A3%E7%A0%81%E6%9C%89%E6%95%88%E6%80%A7-validity">3.1.2 HTML 代码有效性 / Validity</a>
+                  </li>
+                  <li>
+                    <a href="#313-%E8%AF%AD%E4%B9%89-semantics">3.1.3 语义 / Semantics</a>
+                  </li>
+                  <li>
+                    <a href="#314-%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%87%E9%80%89%E6%96%B9%E6%A1%88">3.1.4 多媒体备选方案</a>
+                  </li>
+                  <li>
+                    <a href="#315-%E5%88%86%E7%A6%BB">3.1.5 分离</a>
+                  </li>
+                  <li>
+                    <a href="#316-%E5%AE%9E%E4%BD%93%E5%BC%95%E7%94%A8">3.1.6 实体引用</a>
+                  </li>
+                  <li>
+                    <a href="#317-%E5%8F%AF%E9%80%89%E6%A0%87%E7%AD%BE">3.1.7 可选标签</a>
+                  </li>
+                  <li>
+                    <a href="#318-type-%E5%B1%9E%E6%80%A7">3.1.8 type 属性</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#32-html-%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E8%A7%84%E5%88%99">3.2 HTML 代码格式规则</a>
+                <ul>
+                  <li>
+                    <a href="#321-%E4%B8%80%E8%88%AC%E6%A0%BC%E5%BC%8F">3.2.1 一般格式</a>
+                  </li>
+                  <li>
+                    <a href="#322-html-%E8%A1%8C%E5%8C%85%E8%A3%B9">3.2.2 HTML 行包裹</a>
+                  </li>
+                  <li>
+                    <a href="#323-html-%E5%BC%95%E5%8F%B7">3.2.3 HTML 引号</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#4-css">4. CSS</a>
+            <ul>
+              <li>
+                <a href="#41-css-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E8%A7%84%E5%88%99">4.1 CSS 代码风格规则</a>
+                <ul>
+                  <li>
+                    <a href="#411-css-%E6%9C%89%E6%95%88%E6%80%A7-validity">4.1.1 CSS 有效性 / Validity</a>
+                  </li>
+                  <li>
+                    <a href="#412-idclass-%E5%91%BD%E5%90%8D">4.1.2 ID/Class 命名</a>
+                  </li>
+                  <li>
+                    <a href="#413-idclass-%E5%91%BD%E5%90%8D%E9%A3%8E%E6%A0%BC">4.1.3 ID/Class 命名风格</a>
+                  </li>
+                  <li>
+                    <a href="#414-%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9%E5%99%A8-type-selectors">4.1.4 类型选择器 Type Selectors</a>
+                  </li>
+                  <li>
+                    <a href="#415-%E9%80%9F%E8%AE%B0%E5%B1%9E%E6%80%A7">4.1.5 速记属性</a>
+                  </li>
+                  <li>
+                    <a href="#416-0-%E5%92%8C-%E5%8D%95%E4%BD%8Dunits">4.1.6 0 和 单位/Units</a>
+                  </li>
+                  <li>
+                    <a href="#417-%E5%89%8D%E5%AF%BC%E6%95%B0%E5%AD%97-0">4.1.7 前导数字 0</a>
+                  </li>
+                  <li>
+                    <a href="#418-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B3%95">4.1.8 十六进制表示法</a>
+                  </li>
+                  <li>
+                    <a href="#419-%E5%89%8D%E7%BC%80">4.1.9 前缀</a>
+                  </li>
+                  <li>
+                    <a href="#4110-idclass-%E5%90%8D%E5%88%86%E9%9A%94%E7%AC%A6">4.1.10 ID/Class 名分隔符</a>
+                  </li>
+                  <li>
+                    <a href="#4111-hacks">4.1.11 Hacks</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#42-css-%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F">4.2 CSS 代码格式</a>
+                <ul>
+                  <li>
+                    <a href="#421-%E5%A3%B0%E6%98%8E%E9%A1%BA%E5%BA%8F">4.2.1 声明顺序</a>
+                  </li>
+                  <li>
+                    <a href="#422-%E4%BB%A3%E7%A0%81%E5%9D%97%E5%86%85%E5%AE%B9%E7%BC%A9%E8%BF%9B">4.2.2 代码块内容缩进</a>
+                  </li>
+                  <li>
+                    <a href="#423-%E5%A3%B0%E6%98%8E%E7%BB%93%E6%9D%9F">4.2.3 声明结束</a>
+                  </li>
+                  <li>
+                    <a href="#424-%E5%B1%9E%E6%80%A7%E5%90%8D%E7%BB%93%E6%9D%9F">4.2.4 属性名结束</a>
+                  </li>
+                  <li>
+                    <a href="#425-%E5%A3%B0%E6%98%8E%E9%97%B4%E9%9A%94">4.2.5 声明间隔</a>
+                  </li>
+                  <li>
+                    <a href="#426-%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E5%A3%B0%E6%98%8E%E9%97%B4%E9%9A%94">4.2.6 选择器和声明间隔</a>
+                  </li>
+                  <li>
+                    <a href="#427-%E8%A7%84%E5%88%99%E9%97%B4%E9%9A%94">4.2.7 规则间隔</a>
+                  </li>
+                  <li>
+                    <a href="#428-css-%E5%BC%95%E5%8F%B7">4.2.8 CSS 引号</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#43-css-meta-%E8%A7%84%E5%88%99">4.3 CSS Meta 规则</a>
+                <ul>
+                  <li>
+                    <a href="#431-%E6%B3%A8%E9%87%8A">4.3.1 注释</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#%E6%9C%80%E5%90%8E">最后</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <a id="sidebar-toc-btn">≡</a>
+</body>
+<script>
+  document.body.setAttribute('html-show-sidebar-toc', true)
+  var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+  sidebarTOCBtn.addEventListener('click', function (event) {
+    event.stopPropagation()
+    if (document.body.hasAttribute('html-show-sidebar-toc')) {
+      document.body.removeAttribute('html-show-sidebar-toc')
+    } else {
+      document.body.setAttribute('html-show-sidebar-toc', true)
+    }
+  })
+</script>
+
+</html>
