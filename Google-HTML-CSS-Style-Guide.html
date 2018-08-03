@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Google-HTML-CSS-Style-Guide</title>
+  <title>Google Html Css Style Guide</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -788,7 +788,7 @@
 
     <h2 class="mume-header" id="1%E8%83%8C%E6%99%AF">1.背景</h2>
 
-    <p>本文档定义了HTML/CSS的编写格式和风格规则。它旨在提高合作和代码质量,并使其支持基础架构。它适用于HTML/CSS文件。只要代码质量是可以被维护的，就能很好的被工具混淆、压缩和合并。</p>
+    <p>本文档定义了 HTML/CSS 的编写格式和风格规则。它旨在提高合作和代码质量,并使其支持基础架构。它适用于 HTML/CSS 文件。只要代码质量是可以被维护的，就能很好的被工具混淆、压缩和合并。</p>
     <h2 class="mume-header" id="2-%E6%80%BB%E5%88%99">2. 总则</h2>
 
     <h3 class="mume-header" id="21-%E6%A0%B7%E5%BC%8F%E8%A7%84%E5%88%99">2.1 样式规则</h3>
@@ -797,7 +797,7 @@
 
     <p>尽可能将 HTTPS 协议用于嵌入式资源。</p>
     <p>始终对图像（images）和其他媒体文件，样式文件（style sheets）和脚本文件（scripts）使用 HTTPS 协议
-      <code>https:</code>，除非相应的文件不能通过　HTTPS　获得。</p>
+      <code>https:</code>，除非相应的文件不能通过 HTTPS 获得。</p>
     <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended: omits the protocol (省略了协议) --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
@@ -820,7 +820,7 @@
 
     <h4 class="mume-header" id="221-%E7%BC%A9%E8%BF%9B-indentation">2.2.1 缩进 / Indentation</h4>
 
-    <p>一次缩进2个空格。</p>
+    <p>一次缩进 2 个空格。</p>
     <p>不要使用制表符（Tab）或混合制表符和空格来缩进。</p>
     <pre data-role="codeBlock" data-info="html good" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Fantastic
@@ -834,7 +834,7 @@
     <h4 class="mume-header" id="222-%E5%A4%A7%E5%B0%8F%E5%86%99-capitalization">2.2.2 大小写 / Capitalization</h4>
 
     <p>仅使用小写。</p>
-    <p>所有代码必须为小写：这适用于 HTML 元素名称、属性和属性值（除了 text/CDATA），CSS的选择器、属性和属性值（字符串除外）。</p>
+    <p>所有代码必须为小写：这适用于 HTML 元素名称、属性和属性值（除了 text/CDATA），CSS 的选择器、属性和属性值（字符串除外）。</p>
     <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>A</span> <span class="token attr-name">HREF</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>A</span><span class="token punctuation">></span></span>
 </pre>
@@ -890,8 +890,8 @@
     <pre class="language-text">译者注：代码常用注释标记：
 
 - `NOTE`: 代码如何工作的描述（比较复杂需要解释）
-- `XXX`: 警告可能存在的陷阱 `NOTE:XXX:陷阱`
-- `HACK`: 用于规避问题、错误，代码不健壮或存在异常。 `HACK:FIXME:临时填坑`
+- `XXX`: 警告可能存在的陷阱 `NOTE:XXX: 陷阱`
+- `HACK`: 用于规避问题、错误，代码不健壮或存在异常。 `HACK:FIXME: 临时填坑`
 - `FIXME`: 虽然实现功能，但应该有更优的代码方案，需要重构
 - `BUG`: 这里有问题
 - `TODO`: 没问题，但需要编写额外的代码 (当前工作被中断，未来得及完成)
@@ -904,8 +904,8 @@
 
     <h4 class="mume-header" id="311-document-%E7%B1%BB%E5%9E%8B">3.1.1 Document 类型</h4>
 
-    <p>使用HTML5。</p>
-    <p>HTML5（HTML 语法）是所有 HTML 文档的首选：
+    <p>使用 HTML5。</p>
+    <p>HTML5（ HTML 语法）是所有 HTML 文档的首选：
       <code>&lt;!DOCTYPE html&gt;</code>。</p>
     <p>（推荐使用 HTML，即
       <code>text/html</code>。不要使用 XHTML。XHTML
@@ -913,7 +913,7 @@
     <h4 class="mume-header" id="312-html-%E4%BB%A3%E7%A0%81%E6%9C%89%E6%95%88%E6%80%A7-validity">3.1.2 HTML 代码有效性 / Validity</h4>
 
     <p>尽可能使用有效的 HTML。</p>
-    <p>编写有效的HTML代码，否则很难提升性能。</p>
+    <p>编写有效的 HTML 代码，否则很难提升性能。</p>
     <p>使用
       <a href="https://validator.w3.org/nu/">W3C HTML validator</a> 等工具进行测试。</p>
     <p>HTML 代码有效性是代码质量衡量的重要标准，并且有助于学习技术规范，以确保正确使用 HTML 代码。</p>
@@ -946,7 +946,8 @@
       <code>alt</code> ，对于视频和音频提供有效的副本和字幕说明。</p>
     <p>提供备选内容是很重要的，原因：给盲人用户以一些提示性的文字，用
       <code>@alt</code> 告诉他这图像是关于什么的，给可能没理解视频或音频内容的用户以文字提示。</p>
-    <p>（图像的 alt 属性会产生冗余，纯粹装饰性的图像，不需使用替代文本，直接用
+    <p>（图像的
+      <code>alt</code> 属性会产生冗余，纯粹装饰性的图像，不需使用替代文本，直接用
       <code>alt=&quot;&quot;</code> 属性加以说明 。）</p>
     <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>spreadsheet.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -992,7 +993,7 @@
       <code>&amp;#x263a;</code> 等的实体引用, 假定团队之间所用的文件和编辑器是同一编码（UTF-8）。</p>
     <p>唯一的例外适用于HTML中具有特殊含义的字符（如
       <code>&lt;</code> 和
-      <code>&amp;</code>）以及控件或“invisible / 不可见”字符（如不间断空格）。</p>
+      <code>&amp;</code>）以及控件或 “invisible / 不可见” 字符（如不间断空格）。</p>
     <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
 The currency symbol for the Euro is <span class="token entity" title="&#x201C;">&amp;ldquo;</span><span class="token entity" title="&amp;eur;">&amp;eur;</span><span class="token entity" title="&#x201D;">&amp;rdquo;</span>.
 </pre>
@@ -1009,7 +1010,7 @@ The currency symbol for the Euro is “€”.
 
     <p>在样式表和脚本的标签中忽略 type 属性</p>
     <p>在样式表（除非不用 CSS）和脚本（除非不用 JavaScript）的标签中 不写 type 属性。</p>
-    <p>HTML5默认 type 为
+    <p>HTML5 默认 type 为
       <code>text/css</code> 和
       <code>text/javascript</code> 类型，所以没必要指定。即便是老浏览器也是支持的。</p>
     <pre data-role="codeBlock" data-info="html bad" class="language-html"><span class="token comment">&lt;!-- Not recommended --></span>
@@ -1095,8 +1096,8 @@ The currency symbol for the Euro is “€”.
 
     <h4 class="mume-header" id="411-css-%E6%9C%89%E6%95%88%E6%80%A7-validity">4.1.1 CSS 有效性 / Validity</h4>
 
-    <p>尽可能使用有效的CSS。</p>
-    <p>使用有效的CSS代码，除非处理 CSS 验证程序错误或需要专有语法。</p>
+    <p>尽可能使用有效的 CSS 。</p>
+    <p>使用有效的 CSS 代码，除非处理 CSS 验证程序错误或需要专有语法。</p>
     <p>使用
       <a href="https://jigsaw.w3.org/css-validator/">W3C CSS validator</a> 这类工具进行测试。</p>
     <p>CSS 代码有效性是代码质量衡量的重要标准，如果发现 CSS 代码没有任何效果可以删除它，并确保正确的使用 CSS。</p>
@@ -1105,7 +1106,7 @@ The currency symbol for the Euro is “€”.
     <p>使用有意义且通用的 ID/Class 名。</p>
     <p>命名不可表象、生僻和模糊，通过 ID/Class 命名能知道元素有什么用途，或者是其它通用命名方式。</p>
     <p>首选具有特定名称并反映元素用途的命名，这些名称最容易理解且不易改变，以减少更新。</p>
-    <p>通用命名方式是对元素进行简单的补充，各相邻元素是没有特殊意义的、歧义的，如同命名为&quot;helpers&quot;。</p>
+    <p>通用命名方式是对元素进行简单的补充，各相邻元素是没有特殊意义的、歧义的，如同命名为 &quot;helpers&quot;。</p>
     <p>使用功能性或通用命名方式，会减少不必要的文档或模板修改。</p>
     <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended: meaningless */</span>
 <span class="token selector"><span class="token id">#yee-1901</span> </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
@@ -1174,7 +1175,8 @@ The currency symbol for the Euro is “€”.
 </pre>
     <h4 class="mume-header" id="416-0-%E5%92%8C-%E5%8D%95%E4%BD%8Dunits">4.1.6 0 和 单位/Units</h4>
 
-    <p>除非需要，否则省略“0”值后的单位。</p>
+    <p>除非需要，否则省略
+      <code>0</code> 值后的单位。</p>
     <p>非必要的情况下
       <code>0</code> 后面不加单位。</p>
     <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token comment">/* This flex-basis component requires a unit. */</span>
@@ -1184,14 +1186,16 @@ The currency symbol for the Euro is “€”.
 </pre>
     <h4 class="mume-header" id="417-%E5%89%8D%E5%AF%BC%E6%95%B0%E5%AD%97-0">4.1.7 前导数字 0</h4>
 
-    <p>0开头的浮点数值省略前导 0 。</p>
-    <p>值或长度在 -1 与 1 之间的小数，小数前的 0 可以忽略不写。</p>
+    <p>0 开头的浮点数值省略前导
+      <code>0</code> 。</p>
+    <p>值或长度在 -1 与 1 之间的小数，小数前的
+      <code>0</code> 可以忽略不写。</p>
     <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">.8</span>em<span class="token punctuation">;</span>
 </pre>
     <h4 class="mume-header" id="418-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B3%95">4.1.8 十六进制表示法</h4>
 
-    <p>可能使用3个字符的十六进制表示法。</p>
-    <p>对于许可的颜色值，3个字符的十六进制表示法更短更简洁。</p>
+    <p>可能使用 3 个字符的十六进制表示法。</p>
+    <p>对于许可的颜色值，3 个字符的十六进制表示法更短更简洁。</p>
     <pre data-role="codeBlock" data-info="css bad" class="language-css"><span class="token comment">/* Not recommended */</span>
 <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#eebbcc</span><span class="token punctuation">;</span>
 </pre>
@@ -1225,7 +1229,7 @@ The currency symbol for the Euro is “€”.
     <h4 class="mume-header" id="4111-hacks">4.1.11 Hacks</h4>
 
     <p>避免用户代理 (user agent) 检测以及 CSS &quot;hacks&quot; —— 优先尝试使用其他的解决方案。</p>
-    <p>通过用户代理检测、特殊的 CSS filters、变通灵活的方法、hacks等技术手段解决样式差异问题虽然很诱人，但是为了可实现、可维护、高效率、易管理的代码管理，这些都应该是在万不得已、最后才采用的技术方案。项目倾向于采取阻力最小的方式，频繁使用代理检测和
+    <p>通过用户代理检测、特殊的 CSS filters、变通灵活的方法、hacks 等技术手段解决样式差异问题虽然很诱人，但是为了可实现、可维护、高效率、易管理的代码管理，这些都应该是在万不得已、最后才采用的技术方案。项目倾向于采取阻力最小的方式，频繁使用代理检测和
       hacks ，如此以往，会损害整个项目。</p>
     <h3 class="mume-header" id="42-css-%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F">4.2 CSS 代码格式</h3>
 
@@ -1233,7 +1237,9 @@ The currency symbol for the Euro is “€”.
 
     <p>按字母顺序声明样式。</p>
     <p>按字母顺序声明样式，易于记忆和维护。</p>
-    <p>用于浏览器兼容性前缀的声明在排序中应忽略。但是，CSS 属性中用于多个浏览器的兼容性前缀声明，应该进行排序（例如 -moz 前缀在 -webkit 之前）。</p>
+    <p>用于浏览器兼容性前缀的声明在排序中应忽略。但是，CSS 属性中用于多个浏览器的兼容性前缀声明，应该进行排序（例如
+      <code>-moz</code> 前缀在
+      <code>-webkit</code> 之前）。</p>
     <pre data-role="codeBlock" data-info="css good" class="language-css"><span class="token property">background</span><span class="token punctuation">:</span> fuchsia<span class="token punctuation">;</span>
 <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid<span class="token punctuation">;</span>
 <span class="token property">-moz-border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
@@ -1250,12 +1256,12 @@ The currency symbol for the Euro is “€”.
 
 建议按以下顺序声明样式，便于维护：
 
-- 影响文档流的属性(display&#x2F;visibility&#x2F;float&#x2F;clear&#x2F;position)
-- 盒模型的属性(width&#x2F;height&#x2F;margin&#x2F;padding&#x2F;border&#x2F;outline)
-- 排版属性(font&#x2F;line-height&#x2F;text-align&#x2F;text-indent&#x2F;text-decoration&#x2F;white-space&#x2F;color)
-- 背景装饰属性(background&#x2F;opacity&#x2F;cursor&#x2F;list-style)
-- 生成内容属性(content&#x2F;quotes)
-- 其它CSS3属性，兼容性前缀打包自动添加 (border-radius&#x2F;box-shadow&#x2F;transition&#x2F;transform&#x2F;animation)
+- 影响文档流的属性 (display&#x2F;visibility&#x2F;float&#x2F;clear&#x2F;position)
+- 盒模型的属性 (width&#x2F;height&#x2F;margin&#x2F;padding&#x2F;border&#x2F;outline)
+- 排版属性 (font&#x2F;line-height&#x2F;text-align&#x2F;text-indent&#x2F;text-decoration&#x2F;white-space&#x2F;color)
+- 背景装饰属性 (background&#x2F;opacity&#x2F;cursor&#x2F;list-style)
+- 生成内容属性 (content&#x2F;quotes)
+- 其它 CSS3 属性，兼容性前缀打包自动添加 (border-radius&#x2F;box-shadow&#x2F;transition&#x2F;transform&#x2F;animation)
 </pre>
     <h4 class="mume-header" id="422-%E4%BB%A3%E7%A0%81%E5%9D%97%E5%86%85%E5%AE%B9%E7%BC%A9%E8%BF%9B">4.2.2 代码块内容缩进</h4>
 

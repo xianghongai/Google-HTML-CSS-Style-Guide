@@ -2,7 +2,7 @@
 
 ## 1.背景
 
-本文档定义了HTML/CSS的编写格式和风格规则。它旨在提高合作和代码质量,并使其支持基础架构。它适用于HTML/CSS文件。只要代码质量是可以被维护的，就能很好的被工具混淆、压缩和合并。
+本文档定义了 HTML/CSS 的编写格式和风格规则。它旨在提高合作和代码质量,并使其支持基础架构。它适用于 HTML/CSS 文件。只要代码质量是可以被维护的，就能很好的被工具混淆、压缩和合并。
 
 
 ## 2. 总则
@@ -13,7 +13,7 @@
 
 尽可能将 HTTPS 协议用于嵌入式资源。
 
-始终对图像（images）和其他媒体文件，样式文件（style sheets）和脚本文件（scripts）使用 HTTPS 协议 `https:`，除非相应的文件不能通过　HTTPS　获得。
+始终对图像（images）和其他媒体文件，样式文件（style sheets）和脚本文件（scripts）使用 HTTPS 协议 `https:`，除非相应的文件不能通过 HTTPS 获得。
 
 ```html bad
 <!-- Not recommended: omits the protocol (省略了协议) -->
@@ -45,14 +45,14 @@
 
 #### 2.2.1 缩进 / Indentation
 
-一次缩进2个空格。
+一次缩进 2 个空格。
 
 不要使用制表符（Tab）或混合制表符和空格来缩进。
 
 ```html good
 <ul>
-  <li>Fantastic</li>
-  <li>Great</li>
+  <li>Fantastic
+  <li>Great
 </ul>
 ```
 
@@ -66,7 +66,7 @@
 
 仅使用小写。
 
-所有代码必须为小写：这适用于 HTML 元素名称、属性和属性值（除了 text/CDATA），CSS的选择器、属性和属性值（字符串除外）。
+所有代码必须为小写：这适用于 HTML 元素名称、属性和属性值（除了 text/CDATA），CSS 的选择器、属性和属性值（字符串除外）。
 
 ```html bad
 <!-- Not recommended -->
@@ -144,8 +144,8 @@ color: #e5e5e5;
     译者注：代码常用注释标记：
 
     - `NOTE`: 代码如何工作的描述（比较复杂需要解释）
-    - `XXX`: 警告可能存在的陷阱 `NOTE:XXX:陷阱`
-    - `HACK`: 用于规避问题、错误，代码不健壮或存在异常。 `HACK:FIXME:临时填坑`
+    - `XXX`: 警告可能存在的陷阱 `NOTE:XXX: 陷阱`
+    - `HACK`: 用于规避问题、错误，代码不健壮或存在异常。 `HACK:FIXME: 临时填坑`
     - `FIXME`: 虽然实现功能，但应该有更优的代码方案，需要重构
     - `BUG`: 这里有问题
     - `TODO`: 没问题，但需要编写额外的代码 (当前工作被中断，未来得及完成)
@@ -158,9 +158,9 @@ color: #e5e5e5;
 
 #### 3.1.1 Document 类型
 
-使用HTML5。
+使用 HTML5。
 
-HTML5（HTML 语法）是所有 HTML 文档的首选：`<!DOCTYPE html>`。
+HTML5（ HTML 语法）是所有 HTML 文档的首选：`<!DOCTYPE html>`。
 
 （推荐使用 HTML，即 `text/html`。不要使用 XHTML。XHTML `application/xhtml+xml` 文档标记缺少浏览器和基础架构 / infrastructure 支持，并且存储空间优化比 HTML 少。）
 
@@ -168,7 +168,7 @@ HTML5（HTML 语法）是所有 HTML 文档的首选：`<!DOCTYPE html>`。
 
 尽可能使用有效的 HTML。
 
-编写有效的HTML代码，否则很难提升性能。
+编写有效的 HTML 代码，否则很难提升性能。
 
 使用 [W3C HTML validator](https://validator.w3.org/nu/) 等工具进行测试。
 
@@ -214,7 +214,7 @@ HTML 代码有效性是代码质量衡量的重要标准，并且有助于学习
 
 提供备选内容是很重要的，原因：给盲人用户以一些提示性的文字，用 `@alt` 告诉他这图像是关于什么的，给可能没理解视频或音频内容的用户以文字提示。
 
-（图像的 alt 属性会产生冗余，纯粹装饰性的图像，不需使用替代文本，直接用 `alt=""` 属性加以说明 。）
+（图像的 `alt` 属性会产生冗余，纯粹装饰性的图像，不需使用替代文本，直接用 `alt=""` 属性加以说明 。）
 
 ```html bad
 <!-- Not recommended -->
@@ -270,7 +270,7 @@ HTML 代码有效性是代码质量衡量的重要标准，并且有助于学习
 
 不需要使用类似 `&mdash;`、`&rdquo;` 和 `&#x263a;` 等的实体引用, 假定团队之间所用的文件和编辑器是同一编码（UTF-8）。
 
-唯一的例外适用于HTML中具有特殊含义的字符（如 `<` 和 `&`）以及控件或“invisible / 不可见”字符（如不间断空格）。
+唯一的例外适用于HTML中具有特殊含义的字符（如 `<` 和 `&`）以及控件或 “invisible / 不可见” 字符（如不间断空格）。
 
 ```html bad
 <!-- Not recommended -->
@@ -296,7 +296,7 @@ The currency symbol for the Euro is “€”.
 
 在样式表（除非不用 CSS）和脚本（除非不用 JavaScript）的标签中 不写 type 属性。
 
-HTML5默认 type 为 `text/css` 和 `text/javascript` 类型，所以没必要指定。即便是老浏览器也是支持的。
+HTML5 默认 type 为 `text/css` 和 `text/javascript` 类型，所以没必要指定。即便是老浏览器也是支持的。
 
 ```html bad
 <!-- Not recommended -->
@@ -416,9 +416,9 @@ HTML5默认 type 为 `text/css` 和 `text/javascript` 类型，所以没必要�
 
 #### 4.1.1 CSS 有效性 / Validity
 
-尽可能使用有效的CSS。
+尽可能使用有效的 CSS 。
 
-使用有效的CSS代码，除非处理 CSS 验证程序错误或需要专有语法。
+使用有效的 CSS 代码，除非处理 CSS 验证程序错误或需要专有语法。
 
 使用 [W3C CSS validator](https://jigsaw.w3.org/css-validator/) 这类工具进行测试。
 
@@ -432,7 +432,7 @@ CSS 代码有效性是代码质量衡量的重要标准，如果发现 CSS 代�
 
 首选具有特定名称并反映元素用途的命名，这些名称最容易理解且不易改变，以减少更新。
 
-通用命名方式是对元素进行简单的补充，各相邻元素是没有特殊意义的、歧义的，如同命名为"helpers"。
+通用命名方式是对元素进行简单的补充，各相邻元素是没有特殊意义的、歧义的，如同命名为 "helpers"。
 
 使用功能性或通用命名方式，会减少不必要的文档或模板修改。
 
@@ -527,7 +527,7 @@ padding: 0 1em 2em;
 
 #### 4.1.6 0 和 单位/Units
 
-除非需要，否则省略“0”值后的单位。
+除非需要，否则省略 `0` 值后的单位。
 
 非必要的情况下 `0` 后面不加单位。
 
@@ -540,9 +540,9 @@ padding: 0;
 
 #### 4.1.7 前导数字 0
 
-0开头的浮点数值省略前导 0 。
+0 开头的浮点数值省略前导 `0` 。
 
-值或长度在 -1 与 1 之间的小数，小数前的 0 可以忽略不写。
+值或长度在 -1 与 1 之间的小数，小数前的 `0` 可以忽略不写。
 
 ```css good
 font-size: .8em;
@@ -550,9 +550,9 @@ font-size: .8em;
 
 #### 4.1.8 十六进制表示法
 
-可能使用3个字符的十六进制表示法。
+可能使用 3 个字符的十六进制表示法。
 
-对于许可的颜色值，3个字符的十六进制表示法更短更简洁。
+对于许可的颜色值，3 个字符的十六进制表示法更短更简洁。
 
 ```css bad
 /* Not recommended */
@@ -601,7 +601,7 @@ color: #ebc;
 
 避免用户代理 (user agent) 检测以及 CSS "hacks" —— 优先尝试使用其他的解决方案。
 
-通过用户代理检测、特殊的 CSS filters、变通灵活的方法、hacks等技术手段解决样式差异问题虽然很诱人，但是为了可实现、可维护、高效率、易管理的代码管理，这些都应该是在万不得已、最后才采用的技术方案。项目倾向于采取阻力最小的方式，频繁使用代理检测和 hacks ，如此以往，会损害整个项目。
+通过用户代理检测、特殊的 CSS filters、变通灵活的方法、hacks 等技术手段解决样式差异问题虽然很诱人，但是为了可实现、可维护、高效率、易管理的代码管理，这些都应该是在万不得已、最后才采用的技术方案。项目倾向于采取阻力最小的方式，频繁使用代理检测和 hacks ，如此以往，会损害整个项目。
 
 ### 4.2 CSS 代码格式
 
@@ -611,7 +611,7 @@ color: #ebc;
 
 按字母顺序声明样式，易于记忆和维护。
 
-用于浏览器兼容性前缀的声明在排序中应忽略。但是，CSS 属性中用于多个浏览器的兼容性前缀声明，应该进行排序（例如 -moz 前缀在 -webkit 之前）。
+用于浏览器兼容性前缀的声明在排序中应忽略。但是，CSS 属性中用于多个浏览器的兼容性前缀声明，应该进行排序（例如 `-moz` 前缀在 `-webkit` 之前）。
 
 ```css good
 background: fuchsia;
@@ -631,12 +631,12 @@ text-indent: 2em;
 
     建议按以下顺序声明样式，便于维护：
 
-    - 影响文档流的属性(display/visibility/float/clear/position)
-    - 盒模型的属性(width/height/margin/padding/border/outline)
-    - 排版属性(font/line-height/text-align/text-indent/text-decoration/white-space/color)
-    - 背景装饰属性(background/opacity/cursor/list-style)
-    - 生成内容属性(content/quotes)
-    - 其它CSS3属性，兼容性前缀打包自动添加 (border-radius/box-shadow/transition/transform/animation)
+    - 影响文档流的属性 (display/visibility/float/clear/position)
+    - 盒模型的属性 (width/height/margin/padding/border/outline)
+    - 排版属性 (font/line-height/text-align/text-indent/text-decoration/white-space/color)
+    - 背景装饰属性 (background/opacity/cursor/list-style)
+    - 生成内容属性 (content/quotes)
+    - 其它 CSS3 属性，兼容性前缀打包自动添加 (border-radius/box-shadow/transition/transform/animation)
 
 #### 4.2.2 代码块内容缩进
 
